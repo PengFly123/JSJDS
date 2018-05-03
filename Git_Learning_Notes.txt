@@ -1,0 +1,55 @@
+
+--------创建版本库------------
+
+1.git init								#初始化一个Git仓库		
+2.添加文件到仓库（分两步）：
+    a.  git add file					#将文件添加到暂存区
+	b.  git commit -m “提示信息”		#将暂存区所有文件提交到当前分支
+	
+--------查看信息-------------
+
+1.git status							#查看仓库文件有没有被修改过		
+2.git diff								#查看仓库文件进行过什么修过    	
+3.git log（查看完整信息）   git log --pretty=oneline（只查看commit ID）			#查看提交信息（从最近到最远）       
+
+---------版本回退----------
+
+1.git reset --hard HEAD^  				#将版本库的当前版本回退到上次修改的文件 （几个^表示返回到第几层，太多的用HEAD~n）
+2.git reflog							#查看之前每一次执行的命令         
+3.git diff HEAD -- file					#查看工作区文件和版本库中最新版本的文件区别   
+
+----------撤销文件------------
+
+1.git checkout -- file			   		#修改工作区文件与暂存区或者仓库中的文件保持一致      
+2.git reset HEAD file					#撤销暂存区的修改并重新放回工作区 
+
+
+----------删除文件------------
+
+1.rm file     													#删除工作区的文件
+2.先使用git rm file   再使用git commit -m "remove file"         #删除版本库中的文件
+
+----------添加并关联远程库---------
+
+1.git remote add 远程库名（自定义，一般为origin） https://github账户名@github.com/github账户名/仓库名.git  			#将本地的仓库与远程仓库连接
+2.git push -u 远程库名（origin) master 						#第一次加上-u，以后就不用加
+
+----------从远程库克隆--------------
+
+1.git clone https://GitHub账户名@github.com/github账户名/test_clone.git 			例如:git clone https://ZhangPengFe@github.com/ZhangPengFe/test_clone.git
+	#将test_clone远程仓库克隆到本地仓库
+
+---------创建与合并分支-----------
+
+1.git branch branch_name     			#创建分支
+2.git checkout branch_name     			#切换分支
+3.git checkout -b branch_name  			#创建并切换分支，相当于1和2一起
+4.git branch							#查看分支
+5.git merge some_branch_name			#合并某分支到当前分支
+6.git branch -d branch_name				#删除分支，不能删除当前分支
+
+
+
+
+
+
