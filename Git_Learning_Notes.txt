@@ -42,12 +42,29 @@
 
 ---------创建与合并分支-----------
 
-1.git branch branch_name     			#创建分支
-2.git checkout branch_name     			#切换分支
-3.git checkout -b branch_name  			#创建并切换分支，相当于1和2一起
-4.git branch							#查看分支
-5.git merge some_branch_name			#合并某分支到当前分支
-6.git branch -d branch_name				#删除分支，不能删除当前分支
+1.git branch branch_name     									#创建分支
+2.git checkout branch_name     									#切换分支
+3.git checkout -b branch_name  									#创建并切换分支，相当于1和2一起
+4.git branch													#查看分支
+5.git merge some_branch_name									#合并某分支到当前分支
+6.git branch -d branch_name										#删除分支，不能删除当前分支
+7.git log --graph --pretty=oneline --abbrev-commit				#查看分支合并图
+
+
+-----------分支管理策略-----------
+
+1.git merge --no-ff -m "merge with no-ff" dev 					#将dev分支与当前分支合并
+
+-----------bug分支---------------
+
+1.git stash														#隐藏当前分支的文件和工作区的文件不被其他分支看到或修改
+2.git stash list 												#查看隐藏文件的隐藏信息
+3.git stash apply												#恢复隐藏的文件内容但不删除stash内容
+4.git stash drop												#删除stash内容
+5.git stash pop 												#恢复隐藏的文件并删除stash内容
+6.git stash apply stash@{0}										#通过git stash list查看每个stash内容恢复指定的stash信息
+
+
 
 
 
